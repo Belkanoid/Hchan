@@ -17,6 +17,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -36,6 +40,8 @@ android {
 }
 
 dependencies {
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
