@@ -1,6 +1,7 @@
 package com.belkanoid.hchan.presentation.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.belkanoid.hchan.R
@@ -22,5 +23,6 @@ class HchanAdapter: ListAdapter<MangaInfo, HchanViewHolder>(MangaDiffUtil()) {
     override fun onViewRecycled(holder: HchanViewHolder) {
         super.onViewRecycled(holder)
         Glide.with(holder.binding.root.context).clear(holder.binding.imageView)
+        holder.binding.hover.visibility = View.INVISIBLE
     }
 }

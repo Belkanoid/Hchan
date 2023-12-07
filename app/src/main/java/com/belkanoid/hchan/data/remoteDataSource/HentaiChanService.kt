@@ -17,5 +17,5 @@ object HentaiChanService {
         }
 
     private const val BASE_URL = "https://hentaichan.live/"
-    private fun mangaPage(page: Int, sort: String) = "$BASE_URL/manga/$sort?offset=${page * 20 - 20}"
+    private fun mangaPage(page: Int, sort: String) = "${BASE_URL}manga/$sort?offset=${page * 20 - 20}"
 }
