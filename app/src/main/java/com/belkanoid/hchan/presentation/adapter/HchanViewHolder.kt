@@ -20,7 +20,7 @@ class HchanViewHolder(val binding: MangaItemBinding): RecyclerView.ViewHolder(bi
             .into(binding.imageView)
 
 
-        binding.viewHover.setOnLongClickListener {
+        binding.imageView.setOnLongClickListener {
             binding.hover.visibility = View.VISIBLE
             true
         }
