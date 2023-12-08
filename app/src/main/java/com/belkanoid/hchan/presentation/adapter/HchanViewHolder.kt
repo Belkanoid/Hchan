@@ -20,7 +20,6 @@ class HchanViewHolder(val binding: MangaItemBinding): RecyclerView.ViewHolder(bi
             .into(binding.imageView)
 
 
-
         binding.viewHover.setOnLongClickListener {
             binding.hover.visibility = View.VISIBLE
             true
@@ -31,8 +30,8 @@ class HchanViewHolder(val binding: MangaItemBinding): RecyclerView.ViewHolder(bi
             tvAddDate.text = mangaInfo.addDate
             tvAuthor.text = mangaInfo.author.value
             tvParodies.text = mangaInfo.parodies.value
-            tvTranslatedBy.text = mangaInfo.translatedBy.value
-            tvTags.text = mangaInfo.tagList.map {it.value}.reduce{acc, s -> acc + s.plus(", ") }
+            tvTags.text = mangaInfo.tagList.map {it.value.replace("_", " ")}
+                .reduce{acc, s -> acc.plus(", ") + s }
         }
     }
 }

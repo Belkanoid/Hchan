@@ -1,6 +1,5 @@
 package com.belkanoid.hchan.data.remoteDataSource.parser
 
-import android.util.Log
 import com.belkanoid.hchan.domain.entity.ExtraInfoStyle
 import com.belkanoid.hchan.domain.entity.FameInfoStyle
 import com.belkanoid.hchan.domain.entity.MangaInfo

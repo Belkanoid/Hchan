@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".presentation.MainActivity">
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMangaList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        android:paddingHorizontal="7dp"
         tools:listitem="@layout/manga_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

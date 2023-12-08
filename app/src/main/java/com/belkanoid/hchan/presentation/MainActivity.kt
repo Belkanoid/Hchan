@@ -19,11 +19,11 @@ import kotlinx.coroutines.withContext
 class MainActivity : AppCompatActivity() {
 
 
-    val binding by lazy {
+    private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    lateinit var adapter: HchanAdapter
+    private lateinit var adapter: HchanAdapter
     private var page = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {

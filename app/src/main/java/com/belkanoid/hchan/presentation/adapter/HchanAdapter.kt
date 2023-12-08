@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.belkanoid.hchan.R
 import com.belkanoid.hchan.databinding.MangaItemBinding
 import com.belkanoid.hchan.domain.entity.MangaInfo
 import com.bumptech.glide.Glide
 
 class HchanAdapter: ListAdapter<MangaInfo, HchanViewHolder>(MangaDiffUtil()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HchanViewHolder {
-        val hcanViewBinding = MangaItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val hcanViewBinding = MangaItemBinding
+            .inflate(LayoutInflater.from(parent.context), parent, false)
         return HchanViewHolder(hcanViewBinding)
     }
 
