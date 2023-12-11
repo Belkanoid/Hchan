@@ -10,7 +10,6 @@ object HentaiChanService {
 
     suspend fun getMangaListByPage(page: Int, sort: String = "newest") =
         withContext(Dispatchers.IO) {
-            Log.d("LOLA", mangaPage(page, sort))
             Jsoup.connect(mangaPage(page, sort))
                 .method(Connection.Method.GET)
                 .execute()

@@ -1,11 +1,8 @@
 package com.belkanoid.hchan.presentation.adapter
 
-import android.service.credentials.Action
-import android.util.Log
-import android.view.MotionEvent
+import android.text.TextUtils
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.belkanoid.hchan.R
 import com.belkanoid.hchan.databinding.MangaItemBinding
 import com.belkanoid.hchan.domain.entity.MangaInfo
 import com.bumptech.glide.Glide
@@ -16,7 +13,7 @@ class HchanViewHolder(val binding: MangaItemBinding): RecyclerView.ViewHolder(bi
     fun onBind(mangaInfo: MangaInfo,) {
         Glide.with(binding.root.context)
             .load(mangaInfo.previewUrl)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
             .into(binding.imageView)
 
 
@@ -26,7 +23,7 @@ class HchanViewHolder(val binding: MangaItemBinding): RecyclerView.ViewHolder(bi
         }
 
         with(binding) {
-            textView.text = mangaInfo.title.value
+            tvName.text = mangaInfo.title.value
             tvAddDate.text = mangaInfo.addDate
             tvAuthor.text = mangaInfo.author.value
             tvParodies.text = mangaInfo.parodies.value

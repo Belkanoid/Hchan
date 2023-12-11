@@ -1,24 +1,28 @@
 package com.belkanoid.hchan.presentation
 
+import android.graphics.Canvas
+import android.graphics.Rect
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
-import android.util.Log
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.lifecycleScope
-import com.belkanoid.hchan.R
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.belkanoid.hchan.data.remoteDataSource.HentaiChanService
 import com.belkanoid.hchan.data.remoteDataSource.parser.HchanParser
 import com.belkanoid.hchan.databinding.ActivityMainBinding
 import com.belkanoid.hchan.domain.entity.MangaInfo
 import com.belkanoid.hchan.presentation.adapter.HchanAdapter
+import com.belkanoid.hchan.presentation.adapter.HchanViewHolder
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,9 +36,10 @@ class MainActivity : AppCompatActivity() {
 
     private val ch = CoroutineExceptionHandler { coroutineContext, throwable ->
         Handler(mainLooper).post {
-            Toast.makeText(this@MainActivity, "error",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MainActivity, "error", Toast.LENGTH_SHORT).show()
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
